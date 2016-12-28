@@ -13,6 +13,7 @@
     end
 
     def check(guess)
+      return "Wrong answer" if (guess =~ /[1-6]{4}/).nil?
       if @tries == 0 then @win = false
       else @tries -= 1 end
       if guess == @secret_code
@@ -45,5 +46,8 @@
         "You have no hint"
       end
     end
+
+    def validate?(guess)
+      return true unless (guess =~ /^[1-6]{4}$/ && guess.size ==4)
+    end
   end
-#end

@@ -13,7 +13,7 @@ class Racker
 
   def response
     case @request.path
-    when "/" then Rack::Response.new(render)
+    when "/" then Rack::Response.new(render('index.html.erb'))
     when "/check" then check
     when "/hint" then give_hint
     when "/play_again" then restart
@@ -22,8 +22,8 @@ class Racker
     end
   end
 
-  def render
-    path = File.expand_path("../views/index.html.erb", __FILE__)
+  def render(template)
+    path = File.expand_path("../views/#{template}", __FILE__)
     ERB.new(File.read(path)).result(binding)
   end
 
@@ -67,6 +67,6 @@ class Racker
       response.set_cookie("guess", guess)
       response.set_cookie("mark", answer)
       response.redirect("/")
+      end
     end
   end
-end
