@@ -46,8 +46,4 @@
         "You have no hint"
       end
     end
-
-    def validate?(guess)
-      return true unless (guess =~ /^[1-6]{4}$/ && guess.size ==4)
-    end
   end
