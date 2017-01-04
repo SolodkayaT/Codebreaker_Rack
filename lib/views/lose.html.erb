@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Codebreaker</title>
+    <link rel="stylesheet" href="/stylesheets/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="/stylesheets/application.css" type="text/css">    
+  </head>
+  <body>
+    <div id="container">
+      <h1>Codebreaker</h1>
+      <p>You lose.</p>
+      <p>Secret code was <%= @game.secret_code%>.</p>
+      <p>Do you want to play again?</p>
+      <a href = "/play_again" >Yes</a></br>
+      <form method="POST" action="/save">
+        <input type="text" name="user" placeholder="Enter your name" autofocus>
+        <input class="btn" type="submit" value="Save result">
+      </form></br>
+      <a href = '/score' class="btn">Show statistic</a>
+    </div>
+  </body>
+</html>
