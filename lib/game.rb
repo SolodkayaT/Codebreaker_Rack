@@ -13,7 +13,8 @@
     end
 
     def check(guess)
-      return "Wrong answer" if (guess =~ /[1-6]{4}/).nil?
+      return "Secret code should have only numbers from 1 to 6" if (guess =~ /[1-6]{4}/).nil?
+      return "Secret code should have 4 numbers" if (guess.size != 4)
       if @tries == 0 then @win = false
       else @tries -= 1 end
       if guess == @secret_code
