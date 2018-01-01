@@ -1,0 +1,5 @@
+User1,10,loose
+User2,10,loose
+User1,10,loose
+User2,10,win
+User1,10,loose

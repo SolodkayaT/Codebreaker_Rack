@@ -13,3 +13,8 @@ body {
   margin-top: 10px;
   border-radius: 5px;
 }
+.btn{
+  text-decoration: none;
+  padding: .5em .7em;
+  background: rgba( 255, 255, 255, 0.5);
+}
